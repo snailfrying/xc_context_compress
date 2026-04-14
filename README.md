@@ -375,6 +375,54 @@ context_compress/
 
 ---
 
+## 项目文档
+
+所有文档集中在 [`docs/`](docs/) 目录，按用途分为四类。**首次使用请从 [`docs/INDEX.md`](docs/INDEX.md) 开始**，它是整个文档中心的导航入口。
+
+### 教学与技术讲义（推荐先读）
+
+面向工程师与团队培训的一手技术讲义，覆盖从原理到实现的完整脉络。
+
+| 文档 | 适合人群 | 内容 |
+|------|---------|------|
+| 📖 [**上下文压缩技术教程**](docs/teaching_context_compression.md) | 所有工程师 | 主题 2 线上+线下双课讲义，30–60 min × 2 节，从"为什么需要压缩"讲到 Context Distiller 的落地实现 |
+| 🧠 [**上下文压缩算法全景：1958–2026**](docs/prompt_compression_algorithms.md) | 想深入理解压缩算法的读者 | 70 年 NLP 文本/摘要/Prompt 压缩技术演进综述，逐一解释 Context Distiller L0–L3 四档的设计取舍 |
+| 🗺 [**长期记忆系统演进与选型**](docs/memory_systems_evolution.md) | 正在做 Agent 记忆方案选型 | 记忆技术七代演进 + 主流框架横向对比，讲清 Context Distiller 为何采用 OpenClaw + Mem0 双后端 |
+
+### 记忆系统深度解析
+
+针对项目内置的两大记忆后端各自写了深度解析，讲清它们的架构、数据流、存储机制与适用场景，供做记忆对比与调优时查阅。
+
+| 文档 | 主题 |
+|------|------|
+| 🔒 [**OpenClaw 记忆系统深度解析**](docs/openclaw_memory_deep_dive.md) | 本地优先、文件驱动的记忆范式：Markdown + SQLite FTS5 + 向量索引混合检索 + Silent Turn 压缩 + 三阶段 Dreaming |
+| 🧬 [**Mem0 记忆系统深度解析**](docs/mem0_memory_deep_dive.md) | 外置 RAG 服务范式：Extraction / Update 两阶段流水线 + LLM 驱动的 ADD/UPDATE/DELETE/NOOP 决策 + 向量 × 图双轨存储 + Mem0g 图增强变体 |
+
+### 模型与架构设计
+
+| 文档 | 说明 |
+|------|------|
+| 🏗 [**Context Distiller v2.0 架构设计**](docs/context_distiller/context_distiller_v2_architecture.md) | v2.0 系统架构全景：模块划分、数据流、Profile 路由、硬件感知 |
+| ✅ [**Context Distiller v2.0 最终方案**](docs/context_distiller/context_distiller_v2_final.md) | v2.0 最终落地方案与关键决策记录 |
+| 🔍 [**专家审查与优化计划**](docs/context_distiller/v2_expert_audit_and_optimization_plan.md) | v2.0 代码专家审查结果 + 优化 Roadmap |
+| 📊 [**项目架构总结**](docs/PROJECT_SUMMARY.md) | 整体项目结构与实现层次的高度概览 |
+| 🔬 [**前期调研合集**](docs/preliminary_investigation/) | 架构优化分析、规则预处理设计、标准化管道、企业级上下文扩展等研究笔记 |
+
+### 使用与参考
+
+| 场景 | 文档 |
+|------|------|
+| 5 分钟上手 | [快速开始](docs/QUICKSTART.md) · [安装教程](docs/INSTALL.md) |
+| Python SDK | [API_REFERENCE](docs/api/API_REFERENCE.md) |
+| HTTP 接口 | [REST_API](docs/api/REST_API.md) |
+| 命令行 | [CLI_REFERENCE](docs/api/CLI_REFERENCE.md) |
+| 配置项 | [CONFIGURATION](docs/api/CONFIGURATION.md) |
+| 功能详解 | [用户指南](docs/guides/USER_GUIDE.md) |
+| 代码示例 | [EXAMPLES](docs/examples/EXAMPLES.md) |
+| 速查 | [QUICK_REFERENCE](docs/QUICK_REFERENCE.md) · [CHECKLIST](docs/CHECKLIST.md) |
+
+---
+
 ## 相关论文与资源
 
 | 主题 | 链接 |
@@ -383,8 +431,9 @@ context_compress/
 | SelectiveContext (自信息量过滤) | [arXiv:2310.06201](https://arxiv.org/abs/2310.06201) |
 | Lost in the Middle (长上下文注意力) | [arXiv:2307.03172](https://arxiv.org/abs/2307.03172) |
 | MemGPT / Letta (Agent 记忆架构) | [arXiv:2310.08560](https://arxiv.org/abs/2310.08560) |
+| Mem0 (Scalable Long-Term Memory) | [arXiv:2504.19413](https://arxiv.org/abs/2504.19413) |
 | CLIP (视觉-语言对比学习) | [arXiv:2103.00020](https://arxiv.org/abs/2103.00020) |
-| Mem0 | [docs.mem0.ai](https://docs.mem0.ai) |
+| Mem0 官方文档 | [docs.mem0.ai](https://docs.mem0.ai) |
 | LLMLingua GitHub | [github.com/microsoft/LLMLingua](https://github.com/microsoft/LLMLingua) |
 | MarkItDown | [github.com/microsoft/markitdown](https://github.com/microsoft/markitdown) |
 
