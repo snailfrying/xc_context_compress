@@ -1,0 +1,6 @@
+prompt_distiller:
+  profile: "balanced"
+  text:
+    default_level: "L2"
+  document:
+    cpu_backend: "markitdown"

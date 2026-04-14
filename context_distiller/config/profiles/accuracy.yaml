@@ -1,0 +1,8 @@
+prompt_distiller:
+  profile: "accuracy"
+  text:
+    default_level: "L3"
+  document:
+    cpu_backend: "docling"
+  vision:
+    dedup_enabled: false

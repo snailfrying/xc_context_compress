@@ -1,0 +1,8 @@
+prompt_distiller:
+  profile: "speed"
+  text:
+    default_level: "L0"
+  document:
+    cpu_backend: "pymupdf"
+  vision:
+    dedup_enabled: true

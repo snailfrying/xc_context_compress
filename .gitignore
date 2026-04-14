@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Claude Code
+.claude/
+
+# Data & uploads
+memory.db
+uploads/
+.transcripts/
+
+# Node
+context_distiller_ui/node_modules/
+context_distiller_ui/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+
+node_modules/
+*.pyc
+# 如果有大数据文件，也要加上
+*.zip
+*.tar.gz
+
+models/*
+!models/.gitkeep
+!models/README.md
+test_demo/

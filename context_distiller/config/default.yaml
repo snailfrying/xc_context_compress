@@ -1,0 +1,82 @@
+# =====================================================================
+# Context Distiller 2.0 Global Configuration
+# =====================================================================
+
+# 0. Model Paths (local directories under models/)
+models:
+  base_dir: "models"                                              # 本地模型存储根目录
+  gpt2: "models/gpt2"                                             # L1: GPT-2 self-information
+  llmlingua2: "models/llmlingua2"                                  # L2: LLMLingua-2 (XLM-RoBERTa)
+  clip: "models/clip"                                              # Vision: CLIP ROI (需手动下载)
+  whisper: "models/whisper-small"                                  # Audio: Whisper STT
+
+# 1. LLM / VLM Infrastructure
+llm_server:
+  base_url: "http://172.16.10.201:11434"
+  model_text: "qwen2.5:7b"
+  model_vision: "qwen2.5vl:7b"
+  model_ocr: "deepseek-ocr:latest"      # Dedicated model for OCR tasks (e.g. screenshots, documents)
+
+# 2. Embedding / Vector Search Engine
+embedding_server:
+  provider: "ollama"                         # ollama | local (sentence-transformers)
+  base_url: "http://172.16.10.201:11434"
+  model: "bge-m3"
+
+# 3. Prompt Distiller (One-shot Compression)
+prompt_distiller:
+  profile: "balanced"
+  text:
+    default_level: "L2"
+    onnx_quantization: "int8"
+  document:
+    default_backend: "deepseek"              # deepseek | markitdown | docling | pymupdf
+  vision:
+    dedup_enabled: true
+    tile_adaptive: true
+  audio:
+    fps_sample: 1.0                          # Whisper STT (自动检测语言)
+  video:
+    fps_sample: 1.0                          # 每秒采样帧数
+    max_frames: 16                           # 最大帧数
+    resize_max: 512                          # 帧最大边长
+    grid_cols: 4                             # 网格列数
+    extract_audio: true                      # 是否提取音频
+
+# 4. Memory Gateway (Session & Long-term)
+memory_gateway:
+  session_memory:
+    backend: "builtin"
+    micro_compact:
+      enabled: true
+      keep_recent: 3
+    auto_compact:
+      enabled: true
+      token_threshold: 50000
+      transcript_dir: ".transcripts/"
+      summary_max_tokens: 2000
+    summarize:
+      strategy: "lingua"                   # lingua | llm | fallback
+      lingua_level: "L2"
+      lingua_rate: 0.3
+
+  user_memory:
+    backend: "openclaw"
+    openclaw:
+      db_path: "memory.db"
+      search_weights:
+        vector: 0.7
+        fts: 0.3
+
+# 5. API Gateway
+api:
+  port: 8085
+  uploads_dir: "uploads"
+
+# 6. Observability
+telemetry:
+  enabled: true
+  metrics:
+    - token_count
+    - compression_ratio
+    - latency_ms
