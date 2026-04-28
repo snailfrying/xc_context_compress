@@ -389,6 +389,14 @@ context_compress/
 | 🧠 [**上下文压缩算法全景：1958–2026**](docs/prompt_compression_algorithms.md) | 想深入理解压缩算法的读者 | 70 年 NLP 文本/摘要/Prompt 压缩技术演进综述，逐一解释 Context Distiller L0–L3 四档的设计取舍 |
 | 🗺 [**长期记忆系统演进与选型**](docs/memory_systems_evolution.md) | 正在做 Agent 记忆方案选型 | 记忆技术七代演进 + 主流框架横向对比，讲清 Context Distiller 为何采用 OpenClaw + Mem0 双后端 |
 
+### Agent 架构适配指南
+
+面向需要将 Context Distiller 集成到 Agent 系统的工程师，提供完整的适配教程与代码示例。
+
+| 文档 | 适合人群 | 内容 |
+|------|---------|------|
+| 🤖 [**OpenClaw & Hermes Agent 架构适配教程**](docs/guides/OPENCLAW_HERMES_AGENT_INTEGRATION.md) | Agent 开发者 / API 服务开发者 | 三种适配方案 (REST 网关 / SDK 嵌入 / OpenAI 兼容代理) + OpenClaw 记忆深度集成 + 会话压缩协同 + 多模态支持 + 生产部署最佳实践，含完整可运行代码示例 |
+
 ### 记忆系统深度解析
 
 针对项目内置的两大记忆后端各自写了深度解析，讲清它们的架构、数据流、存储机制与适用场景，供做记忆对比与调优时查阅。
@@ -418,6 +426,7 @@ context_compress/
 | 命令行 | [CLI_REFERENCE](docs/api/CLI_REFERENCE.md) |
 | 配置项 | [CONFIGURATION](docs/api/CONFIGURATION.md) |
 | 功能详解 | [用户指南](docs/guides/USER_GUIDE.md) |
+| Agent 集成 | [OpenClaw & Hermes Agent 适配教程](docs/guides/OPENCLAW_HERMES_AGENT_INTEGRATION.md) |
 | 代码示例 | [EXAMPLES](docs/examples/EXAMPLES.md) |
 | 速查 | [QUICK_REFERENCE](docs/QUICK_REFERENCE.md) · [CHECKLIST](docs/CHECKLIST.md) |
 

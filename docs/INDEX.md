@@ -20,6 +20,7 @@
 
 ### 使用指南
 - [用户指南](guides/USER_GUIDE.md) - 功能详解与最佳实践
+- [OpenClaw & Hermes Agent 适配教程](guides/OPENCLAW_HERMES_AGENT_INTEGRATION.md) - Agent 架构集成完整指南
 - [使用示例](examples/EXAMPLES.md) - 完整代码示例
 - [快速参考](QUICK_REFERENCE.md) - 常用命令速查
 
@@ -50,6 +51,9 @@
 
 **集成到项目**
 - [RAG系统](examples/EXAMPLES.md#示例7-集成到rag系统) | [Agent系统](examples/EXAMPLES.md#示例8-agent记忆系统) | [FastAPI](examples/EXAMPLES.md#示例9-fastapi集成)
+
+**集成到 Agent 架构**
+- [OpenClaw & Hermes Agent 适配教程](guides/OPENCLAW_HERMES_AGENT_INTEGRATION.md) — REST 网关 / SDK 嵌入 / OpenAI 兼容代理三种方案
 
 ---
 
@@ -94,6 +98,12 @@
 - [功能介绍](guides/USER_GUIDE.md#4-记忆管理)
 - [使用场景](guides/USER_GUIDE.md#场景4-agent记忆系统)
 - [集成示例](examples/EXAMPLES.md#示例8-agent记忆系统)
+
+### 场景5: Agent架构集成 (OpenClaw / Hermes)
+- [完整适配教程](guides/OPENCLAW_HERMES_AGENT_INTEGRATION.md)
+- [REST API 网关模式](guides/OPENCLAW_HERMES_AGENT_INTEGRATION.md#4-适配方案一rest-api-网关模式)
+- [Python SDK 嵌入模式](guides/OPENCLAW_HERMES_AGENT_INTEGRATION.md#5-适配方案二python-sdk-嵌入模式)
+- [OpenAI 兼容代理模式](guides/OPENCLAW_HERMES_AGENT_INTEGRATION.md#6-适配方案三openai-兼容代理模式)
 
 ---
 
